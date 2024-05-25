@@ -53,6 +53,7 @@ class ProdukController extends Controller
         $image = $request->file('image');
         $image->storeAs('public/produks', $image->hashName());
         $produk->image = $image->hashName();
+
         $produk->save();
         return redirect()->route('produk.index');
     }
